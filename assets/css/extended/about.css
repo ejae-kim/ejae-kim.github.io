@@ -1,0 +1,67 @@
+/* About Me page styles (PaperMod loads every file in assets/css/extended automatically) */
+
+.about-hero {
+  display: flex;
+  gap: 32px;
+  align-items: center;
+  margin: 8px 0 40px;
+}
+
+.about-photo {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin: 0 !important;
+}
+
+.about-intro h2 {
+  margin-top: 0;
+}
+
+.about-links a {
+  font-weight: 600;
+}
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 16px 0 32px;
+}
+
+.about-card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px 20px;
+  background: var(--entry);
+}
+
+.about-card h3 {
+  margin: 0 0 8px;
+  font-size: 1.05rem;
+}
+
+.about-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: var(--secondary);
+}
+
+.about-note {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  margin-top: 40px;
+}
+
+/* Phones: stack photo above text, cards in one column */
+@media (max-width: 600px) {
+  .about-hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+}

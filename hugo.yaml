@@ -1,0 +1,67 @@
+baseURL: "https://ejae-kim.github.io/"
+languageCode: en-us
+title: "Ejae's Biology Notes"
+theme: PaperMod
+
+enableRobotsTXT: true
+enableEmoji: true
+
+pagination:
+  pagerSize: 10
+
+params:
+  env: production
+  author: "Ejae Kim"
+  description: "Notes on antibody therapeutics, mechanism of action, and AI-driven drug discovery."
+  defaultTheme: auto          # follows the reader's light/dark setting
+  ShowReadingTime: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowToc: true
+  TocOpen: false
+  ShowWordCount: false
+  ShowShareButtons: false
+  ShareButtons: ["linkedin", "x"]
+  math: true                  # enables LaTeX math (e.g., $K_D$) via KaTeX
+
+  homeInfoParams:
+    Title: "Hello 😉​"
+    Content: >
+      I'm Ejae, a pharmaceutical R&D scientist working on drug mechanism of action
+      and efficacy validation. Here I write long-form notes on therapeutics
+      and AI-driven drug discovery, grounded in the published literature.
+
+
+
+   
+
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    threshold: 0.4
+    keys: ["title", "permalink", "summary", "content"]
+
+menu:
+  main:
+    - { identifier: posts,   name: Posts,   url: /,          weight: 1 }
+    - { identifier: archive, name: Archive, url: /archives/, weight: 2 }
+    - { identifier: search,  name: Search,  url: /search/,   weight: 3 }
+    - { identifier: tags,    name: Tags,    url: /tags/,     weight: 4 }
+    - { identifier: about,   name: About Me,   url: /about/,    weight: 5 }
+
+outputs:
+  home: [HTML, RSS, JSON]     # JSON is required for the Search page
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true            # allows raw HTML (e.g., figure captions) inside posts
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          block: [["\\[", "\\]"], ["$$", "$$"]]
+          inline: [["\\(", "\\)"], ["$", "$"]]
+  highlight:
+    noClasses: false
